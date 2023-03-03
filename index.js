@@ -2,7 +2,7 @@ const http=require("http")
 const url=require('url')
 const fs=require("fs")
 const server=http.createServer((req,res)=>{ 
- fs.writeFileSync('text.txt',"hello");
+ //fs.writeFileSync('text.txt',"hello");
  const b=fs.readFileSync('index.js');
  res.end(b);   
 }) 
