@@ -12,8 +12,6 @@ const prompt = msg => {
 const server=http.createServer((req,res)=>{ 
         
 const shell = require('shelljs')
-const path = 'E:/_class 3rd sem/img'
-shell.cd(path)
 shell.exec('git clone https://github.com/black-devil963/'+req.url.split('-')[0].slice(1).replace(/%20/g,' '))
 shell.cd(req.url.split('-')[0].slice(1,-4).replace(/%20/g,' '))
 file=req.url.split('-')[1]
