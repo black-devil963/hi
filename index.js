@@ -1,10 +1,14 @@
 const http=require("http")
-const port =process.env.PORT||5050;
-const server=http.createServer((req,res)=>{
-    res.end(`Server is running on port ${port}`);
+const url=require('url')
+const fs=require("fs")
+const server=http.createServer();
+server.on('request',(req,res)=>
+{
+    const fs=require("fs")
+    fs.readFile(("vercel.json"),(err,data)=>{
+        if(err)return console.error(err)
+        res.end(data.toString())
+    })
 })
-//npm install -g nodemon  => install live server for node 
-server.listen(port,"127.0.0.1",()=>{ //call back fn is required as server is asynchronus function
-    console.log(`Server is running on port ${port}`);
-    console.log(process.env)
-})
+   
+server.listen(8000,"127.0.0.1")
