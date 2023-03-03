@@ -1,5 +1,5 @@
 const http=require("http")
-const port =process.env.PORT||8000;
+const port =process.env.PORT||5050;
 const server=http.createServer((req,res)=>{
     res.end(`Server is running on port ${port}`);
 })
